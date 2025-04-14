@@ -6,7 +6,7 @@ import os
 def CopyImage(source_address, destination, image_name):
 
     jpg = image_name + ".JPG"
-    raw = image_name + ".NEF"
+    raw = image_name + ".NEF" # The NIKON RAW file extension
 
     srcpath = os.path.join(source_address, jpg)
     dstpath = os.path.join(destination, jpg)
@@ -21,12 +21,10 @@ def CopyImage(source_address, destination, image_name):
 
 
 
-source_address = r"P:\StreetPhotography\Outings\Away Day Imperial"
-destination = r"P:\StreetPhotography\Outings\Away Day Imperial\Best"
+source_address = r"PATH_TO_ALL_PICS"
+destination = r"PATH_TO_FOLDER_FOR_FILTERED_PICS"
 
 
-
-#picture = "DSC_" + "7463"# To change the number in the middle to reading from a text file
 
 file = open("PicsNames.txt")
 arr = file.readlines()
@@ -37,6 +35,4 @@ for num in arr:
         picture = "DSC_" + num
         CopyImage(source_address, destination, picture)
 file.close()
-
-#CopyImage(source_address, destination, picture)
 
